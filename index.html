@@ -3,363 +3,252 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Personal Portfolio Website</title>
+<title>Personal Portfolio</title>
 
 <style>
-  
-    body {
-        margin: 0;
-        font-family: 'Poppins', Arial;
-        background: linear-gradient(135deg, #4A148C, #880E4F);
-        color: #fff;
-    }
-
-    header {
-        text-align: center;
-        padding: 25px;
-        background: rgba(0, 0, 0, 0.35);
-        backdrop-filter: blur(10px);
-        font-size: 26px;
-        font-weight: bold;
-        color: #fff;
-    }
-
-    nav {
-        background: rgba(255,255,255,0.1);
-        padding: 12px;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        backdrop-filter: blur(8px);
-        border-bottom: 1px solid rgba(255,255,255,0.2);
-    }
-    nav a {
-        color: #fff;
-        font-weight: 500;
-        padding: 8px 16px;
-        border-radius: 20px;
-        transition: 0.3s;
-        text-decoration: none;
-    }
-    nav a:hover {
-        background: rgba(255,255,255,0.3);
-        transform: scale(1.1);
-    }
-
-    section {
-        max-width: 900px;
-        padding: 40px;
-        margin: auto;
-    }
-
-    .hero {
-        text-align: center;
-        background: rgba(255,255,255,0.1);
-        padding: 50px;
-        border-radius: 15px;
-        backdrop-filter: blur(12px);
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        margin-top: 15px;
-        border: 4px solid rgba(255,255,255,0.5);
-    }
-
-  
-    .card {
-        background: rgba(255,255,255,0.15);
-        padding: 20px;
-        border-radius: 15px;
-        margin-top: 20px;
-        color: white;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        backdrop-filter: blur(10px);
-        animation: fadeIn 0.8s;
-    }
-
- 
-    input, textarea {
-        width: 100%;
-        padding: 12px;
-        margin-top: 8px;
-        border-radius: 10px;
-        border: none;
-        outline: none;
-        background: rgba(255,255,255,0.2);
-        color: white;
-        font-size: 15px;
-    }
-    input::placeholder, textarea::placeholder {
-        color: #ddd;
-    }
-
-  
-    button {
-        width: 100%;
-        padding: 12px;
-        margin-top: 12px;
-        border: none;
-        border-radius: 10px;
-        background: linear-gradient(135deg, #6A1B9A, #D81B60);
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-    button:hover {
-        transform: scale(1.05);
-        background: linear-gradient(135deg, #8E24AA, #E91E63);
-    }
-
-    .hidden { display: none; }
-
-    
-    #auth-box, #signup-box {
-        background: rgba(255,255,255,0.15);
-        backdrop-filter: blur(10px);
-        padding: 25px;
-        border-radius: 15px;
-        max-width: 420px;
-        margin: 50px auto;
-        color: white;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
-
-    ul { margin-left: 15px; }
+body{
+margin:0;
+font-family:Poppins,Arial;
+background:linear-gradient(135deg,#4A148C,#880E4F);
+color:#fff;
+}
+header{
+text-align:center;
+padding:25px;
+font-size:26px;
+font-weight:bold;
+background:rgba(0,0,0,0.35);
+}
+nav{
+background:rgba(255,255,255,0.1);
+padding:12px;
+display:flex;
+justify-content:center;
+gap:20px;
+}
+nav a{
+color:#fff;
+text-decoration:none;
+padding:8px 16px;
+border-radius:20px;
+}
+nav a:hover{
+background:rgba(255,255,255,0.3);
+}
+section{
+max-width:900px;
+margin:20px auto;
+}
+.hero,.card{
+background:rgba(255,255,255,0.15);
+padding:20px;
+border-radius:15px;
+margin-top:20px;
+}
+input,textarea,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:10px;
+border:none;
+}
+button{
+background:linear-gradient(135deg,#6A1B9A,#D81B60);
+color:white;
+cursor:pointer;
+}
+.hidden{display:none}
+#auth-box,#signup-box{
+max-width:420px;
+margin:50px auto;
+}
 </style>
 </head>
+
 <body>
 
 <header>Personal Portfolio Website</header>
 
-
 <div id="auth-box">
-    <h2>Login</h2>
-
-    <input type="text" id="email" placeholder="Email">
-    <input type="password" id="password" placeholder="Password">
-
-    <button onclick="login()">Login</button>
-
-    <p style="text-align:center">or</p>
-
-    <button onclick="showSignup()">Create New Account</button>
+<h2>Login</h2>
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+<p style="text-align:center">or</p>
+<button onclick="showSignup()">Create New Account</button>
 </div>
-
 
 <div id="signup-box" class="hidden">
-    <h2>Create Account</h2>
-
-    <input type="text" id="sname" placeholder="Full Name">
-    <input type="email" id="semail" placeholder="Email">
-    <input type="password" id="spassword" placeholder="Password">
-
-    <button onclick="signup()">Sign Up</button>
-    <button onclick="hideSignup()">Back to Login</button>
+<h2>Create Account</h2>
+<input id="sname" placeholder="Full Name">
+<input id="semail" placeholder="Email">
+<input id="spassword" type="password" placeholder="Password">
+<button onclick="signup()">Sign Up</button>
+<button onclick="hideSignup()">Back to Login</button>
 </div>
-
 
 <div id="mainUI" class="hidden">
 
 <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-    <a href="#" onclick="logout()">Logout</a>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#" onclick="logout()">Logout</a>
 </nav>
 
 <section id="home">
-    <div class="hero">
-        <h2 id="username"></h2>
-        <p id="userbio"></p>
-        <img id="userimg" src="https://via.placeholder.com/150">
-    </div>
+<div class="hero">
+<h2 id="username"></h2>
+<p id="userbio"></p>
+</div>
 </section>
 
 <section id="about">
-    <h2>About</h2>
-    <div class="card">
-        <textarea id="aboutInput" placeholder="Write something about yourself..."></textarea>
-        <button onclick="saveAbout()">Save About</button>
-    </div>
+<h2>About</h2>
+<div class="card">
+<textarea id="aboutInput" placeholder="Write about yourself"></textarea>
+<button onclick="saveAbout()">Save About</button>
+</div>
+</section>
+
+<section>
+<h2>About (View)</h2>
+<div class="card">
+<p id="aboutView"></p>
+</div>
 </section>
 
 <section id="skills">
-    <h2>Skills</h2>
-    <div class="card">
-        <input id="skillInput" placeholder="Add a skill e.g. HTML, Python">
-        <button onclick="addSkill()">Add Skill</button>
-        <ul id="skillList"></ul>
-    </div>
+<h2>Skills</h2>
+<div class="card">
+<input id="skillInput" placeholder="Add skill">
+<button onclick="addSkill()">Add Skill</button>
+<ul id="skillList"></ul>
+</div>
 </section>
 
 <section id="projects">
-    <h2>Projects</h2>
-    <div class="card">
-        <input id="projectTitle" placeholder="Project Title">
-        <textarea id="projectDesc" placeholder="Project Description"></textarea>
-        <button onclick="addProject()">Add Project</button>
-        <div id="projectList"></div>
-    </div>
-</section>
-
-<section id="contact">
-    <h2>Contact Form</h2>
-    <div class="card">
-        <input id="cname" placeholder="Your Name">
-        <input id="cemail" placeholder="Your Email">
-        <textarea id="cmsg" placeholder="Message"></textarea>
-        <button onclick="sendMessage()">Send Message</button>
-    </div>
+<h2>Projects</h2>
+<div class="card">
+<input id="projectTitle" placeholder="Project Title">
+<textarea id="projectDesc" placeholder="Project Description"></textarea>
+<button onclick="addProject()">Add Project</button>
+<div id="projectList"></div>
+</div>
 </section>
 
 </div>
 
 <script>
-function showSignup() {
-    authBox(true);
+window.onload=function(){
+let c=JSON.parse(localStorage.getItem("currentUser"));
+let r=JSON.parse(localStorage.getItem("rememberUser"));
+if(r){
+email.value=r.email;
+password.value=r.password;
+}
+if(c){loadUser();}
 }
 
-function hideSignup() {
-    authBox(false);
+function showSignup(){
+authBox(true);
+}
+function hideSignup(){
+authBox(false);
+}
+function authBox(s){
+document.getElementById("auth-box").classList.toggle("hidden",s);
+document.getElementById("signup-box").classList.toggle("hidden",!s);
 }
 
-function authBox(showSignup) {
-    document.getElementById("auth-box").classList.toggle("hidden", showSignup);
-    document.getElementById("signup-box").classList.toggle("hidden", !showSignup);
+function signup(){
+let users=JSON.parse(localStorage.getItem("users"))||[];
+let user={
+name:sname.value,
+email:semail.value,
+password:spassword.value,
+about:"",
+skills:[],
+projects:[]
+};
+users.push(user);
+localStorage.setItem("users",JSON.stringify(users));
+localStorage.setItem("currentUser",JSON.stringify(user));
+localStorage.setItem("rememberUser",JSON.stringify({email:user.email,password:user.password}));
+loadUser();
 }
 
-function signup() {
-    let users = JSON.parse(localStorage.getItem("users")) || [];
-
-    let user = {
-        name: document.getElementById("sname").value,
-        email: document.getElementById("semail").value,
-        password: document.getElementById("spassword").value,
-        about: "",
-        skills: [],
-        projects: []
-    };
-
-    users.push(user);
-    localStorage.setItem("users", JSON.stringify(users));
-    alert("Account created successfully!");
-    hideSignup();
+function login(){
+let users=JSON.parse(localStorage.getItem("users"))||[];
+let u=users.find(x=>x.email===email.value && x.password===password.value);
+if(!u){alert("Invalid Login");return;}
+localStorage.setItem("currentUser",JSON.stringify(u));
+localStorage.setItem("rememberUser",JSON.stringify({email:u.email,password:u.password}));
+loadUser();
 }
 
-
-let currentUser = null;
-
-function login() {
-    let email = document.getElementById("email").value;
-    let pass = document.getElementById("password").value;
-
-    let users = JSON.parse(localStorage.getItem("users")) || [];
-    let u = users.find(x => x.email === email && x.password === pass);
-
-    if (!u) return alert("Invalid login!");
-
-    currentUser = u;
-    localStorage.setItem("currentUser", JSON.stringify(u));
-    loadUser();
+function loadUser(){
+authBox(true);
+document.getElementById("mainUI").classList.remove("hidden");
+let u=JSON.parse(localStorage.getItem("currentUser"));
+username.innerText=u.name;
+userbio.innerText=u.about;
+aboutView.innerText=u.about;
+showSkills();
+showProjects();
 }
 
-
-function loadUser() {
-    document.getElementById("auth-box").classList.add("hidden");
-    document.getElementById("signup-box").classList.add("hidden");
-    document.getElementById("mainUI").classList.remove("hidden");
-
-    let u = JSON.parse(localStorage.getItem("currentUser"));
-
-    document.getElementById("username").innerText = u.name;
-    document.getElementById("userbio").innerText = u.about;
-
-    showSkills();
-    showProjects();
+function saveAbout(){
+let u=JSON.parse(localStorage.getItem("currentUser"));
+u.about=aboutInput.value;
+updateUser(u);
+userbio.innerText=u.about;
+aboutView.innerText=u.about;
 }
 
-    let u = JSON.parse(localStorage.getItem("currentUser"));
-    u.about = document.getElementById("aboutInput").value;
-
-    updateUser(u);
-    alert("About Saved!");
+function addSkill(){
+let u=JSON.parse(localStorage.getItem("currentUser"));
+u.skills.push(skillInput.value);
+skillInput.value="";
+updateUser(u);
+showSkills();
 }
 
-function addSkill() {
-    let skill = document.getElementById("skillInput").value;
-    let u = JSON.parse(localStorage.getItem("currentUser"));
-
-    u.skills.push(skill);
-    updateUser(u);
-    showSkills();
+function showSkills(){
+let u=JSON.parse(localStorage.getItem("currentUser"));
+skillList.innerHTML="";
+u.skills.forEach(s=>skillList.innerHTML+=`<li>${s}</li>`);
 }
 
-function showSkills() {
-    let u = JSON.parse(localStorage.getItem("currentUser"));
-    let list = document.getElementById("skillList");
-
-    list.innerHTML = "";
-    u.skills.forEach(s => {
-        list.innerHTML += `<li>⭐ ${s}</li>`;
-    });
+function addProject(){
+let u=JSON.parse(localStorage.getItem("currentUser"));
+u.projects.push({title:projectTitle.value,desc:projectDesc.value});
+projectTitle.value="";
+projectDesc.value="";
+updateUser(u);
+showProjects();
 }
 
-
-function addProject() {
-    let title = document.getElementById("projectTitle").value;
-    let desc = document.getElementById("projectDesc").value;
-
-    let u = JSON.parse(localStorage.getItem("currentUser"));
-    u.projects.push({ title, desc });
-
-    updateUser(u);
-    showProjects();
+function showProjects(){
+let u=JSON.parse(localStorage.getItem("currentUser"));
+projectList.innerHTML="";
+u.projects.forEach(p=>{
+projectList.innerHTML+=`<div class="card"><h3>${p.title}</h3><p>${p.desc}</p></div>`;
+});
 }
 
-function showProjects() {
-    let u = JSON.parse(localStorage.getItem("currentUser"));
-    let box = document.getElementById("projectList");
-    box.innerHTML = "";
-
-    u.projects.forEach(p => {
-        box.innerHTML += `
-            <div class="card">
-                <h3>${p.title}</h3>
-                <p>${p.desc}</p>
-            </div>`;
-    });
+function updateUser(u){
+let users=JSON.parse(localStorage.getItem("users"));
+let i=users.findIndex(x=>x.email===u.email);
+users[i]=u;
+localStorage.setItem("users",JSON.stringify(users));
+localStorage.setItem("currentUser",JSON.stringify(u));
 }
 
-
-function sendMessage() {
-    alert("Message sent successfully!");
-}
-
-
-function updateUser(u) {
-    let users = JSON.parse(localStorage.getItem("users")) || [];
-    let index = users.findIndex(x => x.email === u.email);
-
-    users[index] = u;
-    localStorage.setItem("users", JSON.stringify(users));
-    localStorage.setItem("currentUser", JSON.stringify(u));
-}
--
-function logout() {
-    localStorage.removeItem("currentUser");
-    location.reload();
+function logout(){
+localStorage.removeItem("currentUser");
+location.reload();
 }
 </script>
 
